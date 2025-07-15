@@ -1,0 +1,1708 @@
+/* Temel ayarlar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Başlık ve menü */
+header {
+  background-color: #ffe4ec;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border-bottom: 2px solid #f1c9d8;
+}
+
+header h1 {
+  font-size: 70px;
+  color: #b52e5e;
+  margin-bottom: 0.5rem;
+}
+
+
+
+/* Navigasyon */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #b52e5e;
+}
+
+/* Dil butonları */
+.lang-buttons {
+  margin-top: 1rem;
+}
+
+.lang-buttons button {
+  font-size: 1.2rem;
+  padding: 0.3rem 0.6rem;
+  margin: 0 0.2rem;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: rgb(212, 120, 197);
+}
+
+/* İçerik */
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+main h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #b52e5e;
+}
+
+main p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Footer (opsiyonel) */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ffe4ec;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+button {
+  z-index: 1;
+  position: relative;
+  font-size: inherit;
+  font-family: inherit;
+  color: white;
+  padding: 0.5em 1em;
+  outline: none;
+  border: none;
+  background-color: hsl(278, 13%, 67%);
+  overflow: hidden;
+  transition: color 0.4s ease-in-out;
+}
+
+button::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: #3cefff;
+  transform-origin: center;
+  transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+  transition: transform 0.45s ease-in-out;
+}
+
+button:hover {
+  cursor: pointer;
+  color: #161616;
+}
+
+button:hover::before {
+  transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+}
+
+.sub-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.sub-nav a {
+  color: #b52e5e;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sub-nav a:hover {
+  text-decoration: underline;
+}
+
+.button-link {
+  position: relative;
+  display: inline-block;
+  font-size: inherit;
+  font-family: inherit;
+  color: white;
+  padding: 0.5em 1em;
+  background-color: #fae3e3;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 5px;
+  transition: color 0.4s ease-in-out;
+}
+
+.button-link::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: #f0b2b2;
+  transform-origin: center;
+  transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+  transition: transform 0.45s ease-in-out;
+}
+
+.button-link:hover {
+  cursor: pointer;
+  color: #e0489c;
+}
+
+.button-link:hover::before {
+  transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+}
+#title {
+  position: relative;
+   display: inline-block; 
+   font-size: 70px;
+}
+
+
+#title::before, #title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #fc2f70;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+#title::before {
+  top: 0;
+  transform-origin: center right;
+}
+
+#title:hover::before {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+
+#title::after {
+  bottom: 0;
+  transform-origin: center left;
+}
+
+#title:hover::after {
+  transform-origin: center right;
+  transform: scaleX(1);
+}
+
+#navHome {
+  position: relative;
+  font-size: 20px;
+}
+
+#navHome::before, #navHome::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #663cff;
+  transform-origin: center right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+#navHome::before {
+  top: 0;
+}
+
+#navHome::after {
+  bottom: 0;
+}
+
+#navHome:hover::before, #navHome:hover::after {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+
+#navJapan {
+  position: relative;
+  font-size: 20px;
+}
+
+#navJapan::before, #navJapan::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #663cff;
+  transform-origin: center right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+#navJapan::before {
+  top: 0;
+}
+
+#navJapan::after {
+  bottom: 0;
+}
+
+#navJapan:hover::before, #navJapan:hover::after {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+#navLearn {
+  position: relative;
+  font-size: 20px;
+}
+
+#navLearn::before, #navLearn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #663cff;
+  transform-origin: center right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+#navLearn::before {
+  top: 0;
+}
+
+#navLearn::after {
+  bottom: 0;
+}
+
+#navLearn:hover::before, #navLearn:hover::after {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+#japanTitle {
+  position: relative;
+  z-index: 1;
+  display: inline-block; 
+}
+
+#japanTitle::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: -0.25em;
+  right: -0.25em;
+  background-color: #d9bfba;
+  transform-origin: center right;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+#japanTitle:hover::before {
+  transform: scaleX(1);
+  transform-origin: center left;
+}
+
+#homeTitle2{
+  color: #e07878;
+}
+.lang-section {
+  max-width: 900px;
+  margin: 50px auto;       /* sayfa ortalanır, her iki yandan boşluk */
+  padding: 0 20px;         /* içerik kenardan ayrılır */
+  font-size: 1.2rem;       /* genel yazı büyüklüğü */
+  line-height: 1.8;
+  color: #333;
+}
+
+#homeText {
+  max-width: 900px;
+  margin: 50px auto;       /* sayfa ortalanır, her iki yandan boşluk */
+  padding: 0 20px;         /* içerik kenardan ayrılır */
+  font-size: 1.2rem;       /* genel yazı büyüklüğü */
+  line-height: 1.8;
+  color: #333;
+}
+
+#homeTitle {
+  position: relative;
+  display: inline-block; 
+}
+
+#homeTitle::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #3cefff;
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+#homeTitle:hover::before {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+/* Genel sayfa ayarları */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* İçeriği ortaya alan düzen */
+main {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  border-left: 6px solid #f48fb1;
+}
+
+/* Başlık stilleri */
+#japanTitle {
+  color: #c2185b;
+  font-size: 2em;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f48fb1;
+  padding-bottom: 10px;
+}
+
+/* Paragraf yazı stili */
+#japanText {
+  font-size: 1.05em;
+  line-height: 1.7;
+  white-space: pre-line; /* Paragraflar arasında boşluk varsa korur */
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 600px) {
+  main {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  #japanTitle {
+    font-size: 1.6em;
+  }
+
+  #japanText {
+    font-size: 1em;
+  }
+}
+
+#homeText {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000; /* Siyah metin */
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 25px 35px;
+  border: 2px solid transparent;
+  border-image: linear-gradient(45deg, #c2185b, #f48fb1);
+  border-image-slice: 1;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(194, 24, 91, 0.15);
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  text-align: justify;
+  line-height: 1.75;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+#homeText::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -25%;
+  width: 150%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent 0%, rgba(194,24,91,0.15) 50%, transparent 100%);
+  transform: rotate(25deg);
+  animation: shimmer 3s infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#homeText:hover {
+  border-color: transparent;
+  box-shadow: 0 8px 30px rgba(194, 24, 91, 0.35);
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(25deg);
+  }
+}
+
+.banner {
+ gap: 30px; /* Görseller ile başlık arası boşluk */
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+
+.banner-image {
+  width: 100px; /* Görsel boyutu, isteğe göre ayarlanabilir */
+  height: auto;
+}
+
+.banner-image.left {
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.banner-image.right {
+  margin-left: 10px;
+}
+
+.button-container {
+  /* Butonları yatayda ortalar */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.custom-button {
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  border: none;
+  border-radius: 50px;
+  color: #6b4226;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 12px 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(252, 182, 159, 0.6);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-button:hover {
+  background: linear-gradient(135deg, #ffafcb, #ff5d8f); /* pembe degrade */
+  color: #7a1f4d; /* koyu pembe-mor ton */
+  box-shadow: 0 10px 18px rgba(255, 93, 143, 0.9); /* pembe gölge */
+  transform: scale(1.1);
+}
+
+
+
+.custom-button:active {
+  transform: scale(1);
+  box-shadow: 0 6px 12px rgba(252, 182, 159, 0.6);
+}
+
+.food-card {
+  max-width: 700px;        /* Genişlik artırıldı */
+  padding: 20px;
+  margin: 10px auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* 1. stil – açık pembe / soft */
+.card1 {
+  background: linear-gradient(135deg, #fff0f5, #fce4ec);
+  border: 2px solid #f8bbd0;
+  color: #880e4f;
+}
+
+/* 2. stil – açık mavi / deniz */
+.card2 {
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  border: 2px solid #4dd0e1;
+  color: #006064;
+}
+
+/* 3. stil – krem / doğal */
+.card3 {
+  background: linear-gradient(135deg, #fffde7, #fff9c4);
+  border: 2px solid #fbc02d;
+  color: #f57f17;
+}
+
+/* 4. stil – lavanta */
+.card4 {
+  background: linear-gradient(135deg, #ede7f6, #d1c4e9);
+  border: 2px solid #7e57c2;
+  color: #512da8;
+}
+
+/* 5. stil – soft turuncu */
+.card5 {
+  background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+  border: 2px solid #ffb74d;
+  color: #e65100;
+}
+
+/* Resim ayarları */
+.food-card img {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: block;
+}
+.music-card {
+  max-width: 700px;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+  border: 2px solid #4fc3f7;
+  color: #01579b;
+}
+
+.music-card a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #01579b;
+  font-weight: bold;
+}
+.music-card a:hover {
+  text-decoration: underline;
+}
+.music-header {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  background: linear-gradient(to right, #e1f5fe, #e3f2fd);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.music-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #0d47a1;
+}
+
+.music-intro {
+  font-size: 1.1rem;
+  color: #37474f;
+  font-style: italic;
+  max-width: 700px;
+  margin: 0 auto;
+}
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #f06292;
+  color: white;
+  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.authors-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: #ed9d98;
+}
+
+.author-card {
+  display: flex;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.author-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.author-photo {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 25px;
+  border: 3px solid #444;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.author-info {
+  flex-grow: 1;
+  font-family: 'Georgia', serif;
+  color: #222;
+}
+
+.author-name {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.author-bio {
+  font-style: italic;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.book-title {
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: #555;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.book-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .author-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .author-photo {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .author-info {
+    width: 100%;
+  }
+}
+#books {
+  position: relative;
+  z-index: 1;
+  display:inline-block;
+  text-align: center;
+}
+
+#books::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: -0.25em;
+  right: -0.25em;
+  background-color: hsla(341, 97%, 59%, 0.75);
+  transform-origin: center right;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+#books:hover::before {
+  transform: scaleX(1);
+  transform-origin: center left;
+}
+#animeSection {
+  padding: 40px 20px;
+  background: #f5f5ff;
+  text-align: center;
+}
+
+.anime-card {
+  background: linear-gradient(135deg, #e1f5fe, #fce4ec);
+  border: 2px solid #b2ebf2;
+  border-radius: 18px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.anime-card h3 {
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+
+.anime-card p {
+  font-size: 1rem;
+  color: #333;
+}
+#yasam{
+   max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  border-left: 6px solid #f4c88f;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #fce7de;
+  font-size: 20px;
+}
+#yasamTitle {
+  position: relative;
+  display: inline-block;
+  color: #f069e2;
+}
+
+#yasamTitle::before, #yasamTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #3cefff;
+  transform-origin: center right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+#yasamTitle::before {
+  top: 0;
+}
+
+#yasamTitle::after {
+  bottom: 0;
+}
+
+#yasamTitle:hover::before, #yasamTitle:hover::after {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+#yasamText{
+  white-space: pre-wrap;
+}
+#kultur{ 
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  border-left: 6px solid #bcfcb8;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #e2f5e1;
+   font-size: 20px;
+}
+#festival{
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  border-left: 6px solid #93bbfa;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #cfe0fc;
+   font-size: 20px;
+}
+#ulasim{
+   max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  border-left: 6px solid #c49ffc;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #e8d9ff;
+   font-size: 20px;
+}
+#egitim{
+   max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  border-left: 6px solid  #ecadff;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #f5d6ff;
+   font-size: 20px;
+}
+#doga{
+   max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  border-left: 6px solid  #fca7ed;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #ffd4f7;
+   font-size: 20px;
+}
+#teknoloji{
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  border-left: 6px solid  #fc9db6;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #fcd2dd;
+   font-size: 20px;
+}
+#sanat{
+   max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  border-left: 6px solid  #e4fa96;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #f1fcc7;
+   font-size: 20px;
+}
+#randomgerçek {
+  background-color: #fffaf4; /* Sıcak krem tonu */
+  border: 2px solid #e0d1c2;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin: 30px auto;
+  max-width: 700px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+#randomgerçek:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+#randomgerçek h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #9c5c32; /* Japon usulü zarif koyu kahve tonu */
+  border-bottom: 2px solid #e0d1c2;
+  padding-bottom: 6px;
+  font-weight: 600;
+}
+
+#randomgerçek p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #444;
+}
+.flashcard {
+  width: 200px;
+  height: 120px;
+  perspective: 1000px;
+  margin: 20px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flashcard:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffe;
+  color: #222;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.card-back {
+  background: #e2f0ff;
+  transform: rotateY(180deg);
+}
+/* Genel gövde stili */
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #fff0f5; /* Hafif kiraz çiçeği pembesi */
+  color: #333;
+  padding: 20px;
+  text-align: center;
+  margin: 0;
+}
+
+/* Başlık */
+h2#section1-title {
+  font-size: 2rem;
+  color: #c94f70; /* Sakura pembesi ton */
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Flashcard konteyner (isteğe bağlı, mevcutta varsa atla) */
+.flashcard-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+} 
+
+/* Flashcard temel */
+.flashcard {
+  width: 220px;
+  height: 130px;
+  perspective: 1000px;
+  margin: 15px auto;
+}
+
+/* Kart içi */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  box-shadow: 0 8px 12px rgba(201, 79, 112, 0.3);
+  border-radius: 12px;
+  background-color: transparent;
+}
+
+/* Hover veya tıklama ile dönme efekti için JS gerekebilir,
+   ama hover ile hızlı demo için şu kodu ekleyebilirsin: */
+.flashcard:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Kartın ön ve arka yüzü */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Ön yüz (Japonca metin) */
+.card-front {
+  background: #ffe4e1; /* Açık pembe */
+  color: #b0003a;
+  border: 2px solid #c94f70;
+}
+
+/* Arka yüz (Anlam) */
+.card-back {
+  background: #dbeafe; /* Yumuşak mavi */
+  color: #223a7a;
+  border: 2px solid #6b82a8;
+  transform: rotateY(180deg);
+  white-space: normal;
+  line-height: 1.4;
+}
+
+/* Responsive: küçük ekranlarda kart genişliği %90 */
+@media (max-width: 480px) {
+  .flashcard {
+    width: 90%;
+    height: 120px;
+  }
+
+  .card-front,
+  .card-back {
+    font-size: 1.1rem;
+  }
+}
+.text-box {
+  max-width: 600px;
+  margin: 30px auto 40px auto;
+  padding: 15px 20px;
+  background-color: #fdeef4; /* Çok açık pembe ton */
+  border: 2px solid #c94f70; /* Sakura pembesi */
+  border-radius: 10px;
+  color: #702947;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  box-shadow: 0 4px 8px rgba(201, 79, 112, 0.15);
+  text-align: left;
+}
+/*------------------------------------------------------------*/
+
+/* 2. Bölüm Başlığı */
+#section2-title {
+  color: #7b3f99; /* Mor ton */
+}
+
+/* 2. Bölüm Flashcard Renkleri (Mor tonlar) */
+#section2-title ~ .flashcard:not(.grammar-flashcard) .card-front {
+  background: #e6d0f7; /* Açık mor */
+  color: #4b2466; /* Koyu mor */
+  border: 2px solid #7b3f99;
+}
+
+#section2-title ~ .flashcard:not(.grammar-flashcard) .card-back {
+  background: #d9c8f9; /* Daha açık mor */
+  color: #3a1d53;
+  border: 2px solid #6b4e8e;
+  transform: rotateY(180deg);
+}
+
+/* Gramer Kutusu Özel Tasarım */
+#grammar1 {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px 25px;
+  background-color: #e6faa0; /* Açık yeşil */
+  border: 2px solid #a7d129;
+  border-radius: 15px;
+  color: #556b2f;
+  font-size: 1.15rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(167, 209, 41, 0.3);
+  text-align: left;
+  line-height: 1.5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Gramer flashcardları */
+.grammar-flashcard .card-front {
+  background-color: #e6faa0;
+  color: #556b2f;
+  border: 2px solid #a7d129;
+}
+
+.grammar-flashcard .card-back {
+  background-color: #e6faa0;
+  color: #4a5d11;
+  border: 2px solid #8bb32c;
+  transform: rotateY(180deg);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  #section2-title ~ .flashcard {
+    width: 90%;
+    height: 120px;
+  }
+  #section2-title ~ .flashcard .card-front,
+  #section2-title ~ .flashcard .card-back {
+    font-size: 1.1rem;
+  }
+  #grammar1 {
+    max-width: 90%;
+    font-size: 1rem;
+  }
+}
+/* 3. Bölüm Başlığı */
+#section3-title {
+  color: #1f4e78; /* Mavi ton başlık */
+}
+
+/* 3. bölümdeki genel flashcardlar (sayı/saat) */
+#section3-title ~ .flashcard:not(.grammar-flashcard) .card-front {
+  background: #dceeff; /* Açık mavi */
+  color: #0f3558;
+  border: 2px solid #1f4e78;
+}
+
+#section3-title ~ .flashcard:not(.grammar-flashcard) .card-back {
+  background: #c0ddf9;
+  color: #1a2b45;
+  border: 2px solid #447cbf;
+  transform: rotateY(180deg);
+}
+
+/* Gramer Notu Kutusu */
+#grammar3 {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px 25px;
+  background-color: #e6faa0; /* Açık yeşil */
+  border: 2px solid #a7d129;
+  border-radius: 15px;
+  color: #556b2f;
+  font-size: 1.15rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(167, 209, 41, 0.3);
+  text-align: left;
+  line-height: 1.5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Gramer flashcardları */
+.grammar-flashcard .card-front {
+  background-color: #e6faa0;
+  color: #556b2f;
+  border: 2px solid #a7d129;
+}
+
+.grammar-flashcard .card-back {
+  background-color: #e6faa0;
+  color: #4a5d11;
+  border: 2px solid #8bb32c;
+  transform: rotateY(180deg);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  #section3-title ~ .flashcard {
+    width: 90%;
+    height: 120px;
+  }
+  #section3-title ~ .flashcard .card-front,
+  #section3-title ~ .flashcard .card-back {
+    font-size: 1.1rem;
+  }
+  #grammar3 {
+    max-width: 90%;
+    font-size: 1rem;
+  }
+}
+/* 4. Bölüm Başlığı */
+#section4-title {
+  color: #d35400; /* Turuncu koyu ton */
+}
+
+/* 4. bölümdeki genel flashcardlar (turuncu grup) */
+#section4-title ~ .flashcard:not(.grammar-flashcard) .card-front {
+  background: #ffe2c6; /* Açık turuncu */
+  color: #8c3b00;
+  border: 2px solid #d35400;
+}
+
+#section4-title ~ .flashcard:not(.grammar-flashcard) .card-back {
+  background: #ffd5b0; /* Daha yoğun turuncu */
+  color: #663300;
+  border: 2px solid #d67d26;
+  transform: rotateY(180deg);
+}
+
+/* Gramer Kutusu */
+#grammar4 {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px 25px;
+  background-color: #e6faa0;
+  border: 2px solid #a7d129;
+  border-radius: 15px;
+  color: #556b2f;
+  font-size: 1.15rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(167, 209, 41, 0.3);
+  text-align: left;
+  line-height: 1.5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Gramer flashcardları */
+.grammar-flashcard .card-front {
+  background-color: #e6faa0;
+  color: #556b2f;
+  border: 2px solid #a7d129;
+}
+
+.grammar-flashcard .card-back {
+  background-color: #e6faa0;
+  color: #4a5d11;
+  border: 2px solid #8bb32c;
+  transform: rotateY(180deg);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  #section4-title ~ .flashcard {
+    width: 90%;
+    height: 120px;
+  }
+  #section4-title ~ .flashcard .card-front,
+  #section4-title ~ .flashcard .card-back {
+    font-size: 1.1rem;
+  }
+  #grammar4 {
+    max-width: 90%;
+    font-size: 1rem;
+  }
+}
+/* 5. Bölüm Başlığı */
+#section5-title {
+  color: #3a86ff; /* Canlı mavi ton başlık */
+}
+
+/* 5. bölüm genel flashcardlar (buz mavisi) */
+#section5-title ~ .flashcard:not(.grammar-flashcard) .card-front {
+  background: #caf0f8; /* Buz mavisi açık */
+  color: #034078;
+  border: 2px solid #3a86ff;
+}
+
+#section5-title ~ .flashcard:not(.grammar-flashcard) .card-back {
+  background: #ade8f4; /* Buz mavisi açık ton */
+  color: #023e8a;
+  border: 2px solid #90e0ef;
+  transform: rotateY(180deg);
+}
+
+/* Gramer Kutusu */
+#grammar5 {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px 25px;
+  background-color: #e6faa0; /* Gramer kutusu yeşil */
+  border: 2px solid #a7d129;
+  border-radius: 15px;
+  color: #556b2f;
+  font-size: 1.15rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(167, 209, 41, 0.3);
+  text-align: left;
+  line-height: 1.5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Gramer flashcardları */
+.grammar-flashcard .card-front {
+  background-color: #e6faa0;
+  color: #556b2f;
+  border: 2px solid #a7d129;
+}
+
+.grammar-flashcard .card-back {
+  background-color: #e6faa0;
+  color: #4a5d11;
+  border: 2px solid #8bb32c;
+  transform: rotateY(180deg);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  #section5-title ~ .flashcard {
+    width: 90%;
+    height: 120px;
+  }
+  #section5-title ~ .flashcard .card-front,
+  #section5-title ~ .flashcard .card-back {
+    font-size: 1.1rem;
+  }
+  #grammar5 {
+    max-width: 90%;
+    font-size: 1rem;
+  }
+}
+/* 6. Bölüm Başlığı */
+#section6-title {
+  color: #d84315; /* Koyu turuncu-kırmızı */
+}
+
+/* 6. bölüm genel flashcardlar */
+#section6-title ~ .flashcard:not(.grammar-flashcard) .card-front {
+  background: #ffccbc; /* Açık somon */
+  color: #6d1b08;
+  border: 2px solid #d84315;
+}
+
+#section6-title ~ .flashcard:not(.grammar-flashcard) .card-back {
+  background: #ffab91; /* Daha yoğun somon */
+  color: #4e1a00;
+  border: 2px solid #ff7043;
+  transform: rotateY(180deg);
+}
+
+/* Gramer Kutusu */
+#grammar6 {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px 25px;
+  background-color: #e6faa0; /* Gramer kutusu yeşil */
+  border: 2px solid #a7d129;
+  border-radius: 15px;
+  color: #556b2f;
+  font-size: 1.15rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(167, 209, 41, 0.3);
+  text-align: left;
+  line-height: 1.5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Gramer flashcardları */
+.grammar-flashcard .card-front {
+  background-color: #e6faa0;
+  color: #556b2f;
+  border: 2px solid #a7d129;
+}
+
+.grammar-flashcard .card-back {
+  background-color: #e6faa0;
+  color: #4a5d11;
+  border: 2px solid #8bb32c;
+  transform: rotateY(180deg);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  #section6-title ~ .flashcard {
+    width: 90%;
+    height: 120px;
+  }
+  #section6-title ~ .flashcard .card-front,
+  #section6-title ~ .flashcard .card-back {
+    font-size: 1.1rem;
+  }
+  #grammar6 {
+    max-width: 90%;
+    font-size: 1rem;
+  }
+}
+/* 7. Bölüm Başlığı */
+#section7-title {
+  color: #6a5acd; /* Lavanta-mor */
+}
+
+/* 7. bölüm genel flashcardlar */
+#section7-title ~ .flashcard:not(.grammar-flashcard) .card-front {
+  background: #e6e6fa; /* Açık lavanta */
+  color: #4b3b8a;
+  border: 2px solid #6a5acd;
+}
+
+#section7-title ~ .flashcard:not(.grammar-flashcard) .card-back {
+  background: #dcdcff; /* Hafif daha koyu */
+  color: #3b2f72;
+  border: 2px solid #7f79d7;
+  transform: rotateY(180deg);
+}
+
+/* Gramer Kutusu */
+#grammar7 {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px 25px;
+  background-color: #e6faa0; /* Yeşil gramer kutusu */
+  border: 2px solid #a7d129;
+  border-radius: 15px;
+  color: #556b2f;
+  font-size: 1.15rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(167, 209, 41, 0.3);
+  text-align: left;
+  line-height: 1.5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Gramer flashcardları */
+.grammar-flashcard .card-front {
+  background-color: #e6faa0;
+  color: #556b2f;
+  border: 2px solid #a7d129;
+}
+
+.grammar-flashcard .card-back {
+  background-color: #e6faa0;
+  color: #4a5d11;
+  border: 2px solid #8bb32c;
+  transform: rotateY(180deg);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  #section7-title ~ .flashcard {
+    width: 90%;
+    height: 120px;
+  }
+  #section7-title ~ .flashcard .card-front,
+  #section7-title ~ .flashcard .card-back {
+    font-size: 1.1rem;
+  }
+  #grammar7 {
+    max-width: 90%;
+    font-size: 1rem;
+  }
+}
+#grammarBox {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background-color: #f0f8ff; /* Açık mavi ton */
+  border-left: 6px solid #cc3000; /* Canlı mavi çizgi */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 122, 204, 0.25);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #661400;
+  line-height: 1.6;
+}
+
+#grammarBox h3 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-bottom: 2px solid #007acc;
+  padding-bottom: 8px;
+}
+
+#grammarBox p {
+  font-size: 1.15rem;
+  margin: 12px 0;
+}
+#grammarBox2 {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px 30px;
+  background: linear-gradient(135deg, #f9f9f9 0%, #e3f2fd 100%);
+  border: 3px dashed #8ff08f;
+  border-radius: 15px;
+  font-family: "Calibri", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #12a56d;
+  box-shadow: 0 6px 15px rgba(33, 150, 243, 0.3);
+  line-height: 1.7;
+}
+
+#grammarBox2 h3 {
+  margin-top: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  text-shadow: 1px 1px 2px #90caf9;
+  letter-spacing: 1.1px;
+}
+
+#grammarBox2 ul {
+  list-style-type: square;
+  padding-left: 20px;
+  font-size: 1.15rem;
+}
+
+#grammarBox2 ul li {
+  margin: 12px 0;
+}
+#grammarBox3 {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 30px 40px;
+  background: radial-gradient(circle at top left, #fff5e1, #ffd54f);
+  border-radius: 20px;
+  border: 4px solid #ffa726;
+  box-shadow: 0 8px 20px rgba(255, 165, 0, 0.4);
+  font-family: "Verdana", Geneva, Tahoma, sans-serif;
+  color: #5d4037;
+  line-height: 1.75;
+  letter-spacing: 0.03em;
+  transition: transform 0.3s ease;
+}
+
+#grammarBox3:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(255, 165, 0, 0.6);
+}
+
+#grammarBox3 h3 {
+  margin-top: 0;
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-align: center;
+  color: #bf360c;
+  text-shadow: 1px 1px 2px #ffe0b2;
+  margin-bottom: 25px;
+}
+
+#grammarBox3 ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#grammarBox3 ul li {
+  background: #fff3e0;
+  margin-bottom: 18px;
+  padding: 15px 20px;
+  border-radius: 12px;
+  border-left: 6px solid #ffb300;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px rgba(255, 179, 0, 0.3);
+}
+
+#grammarBox3 ul li em {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  color: #6d4c41;
+  font-weight: 600;
+  font-size: 1rem;
+}
+#conjunctionBox {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 25px 35px;
+  background: #fffef9;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  font-family: "Georgia", serif;
+  color: #4a4a4a;
+}
+
+#conjunctionBox h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2f4f4f;
+  text-shadow: 1px 1px 3px #cfcfcf;
+}
+
+#conjunctionBox table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#conjunctionBox th,
+#conjunctionBox td {
+  border: 1px solid #ddd;
+  padding: 14px 18px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#conjunctionBox th {
+  background-color: #2f4f4f;
+  color: #fff;
+  font-weight: 700;
+}
+
+#conjunctionBox tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#conjunctionBox tbody tr:hover {
+  background-color: #e3f2fd;
+  transition: background-color 0.3s ease;
+}
+
+#conjunctionBox td em {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  color: #555;
+}
+#button {
+  display: flex;
+  flex-direction: row; /* BUTONLARI YAN YANA KOYAR */
+  flex-wrap: wrap;     /* Satıra sığmazsa alta geçmelerine izin verir */
+  gap: 12px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+#button li {
+  list-style: none;
+}
+
+.button-link {
+  display: block;
+  background-color: #f2f2f2;
+  color: #333;
+  text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button-link:hover {
+  background-color: #ffccd5;
+  color: #000;
+  border-color: #ff8fa3;
+  transform: scale(1.03);
+}
+@media (max-width: 600px) {
+  #button {
+    flex-direction: column;
+  }
+}
